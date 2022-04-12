@@ -1,0 +1,44 @@
+.movieItem {
+    list-style: none;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .movieItem a {
+    text-decoration: none;
+    color: aliceblue;
+  }
+  .movieItem:hover {
+    opacity: 0.8;
+  }
+  
+  .movieImage {
+    background-color: azure;
+  }
+  
+  @media (max-width: 560px) {
+    .movieImage {
+      width: 90%;
+      height: auto;
+    }
+  }
+  
+  .objetfit{
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      background-color: black;
+  
+  }
+  
+  .objetfitcover{
+      width: 200px;
+      height: 400px;
+      object-fit: cover;
+  }
+  
+  .movieTitle{
+      text-align: right;
+      font-size: small;
+      padding-right: 17px;
+  } 

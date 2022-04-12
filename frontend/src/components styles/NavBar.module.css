@@ -1,0 +1,33 @@
+.nav {
+  height: 30px;
+  padding: 5px;
+}
+
+.navList {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navItem {
+  list-style: none;
+  text-align: end;
+  height: 100%;
+  border: none;
+}
+
+.navButton {
+  cursor: pointer;
+  height: 100%;
+  border: none;
+  background: none;
+  color: aliceblue;
+  padding: 5px;
+}
+.navButton:active {
+    color: #C48900;
+  }
+
+.navButton:focus {
+  outline: none;
+}

@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { faHouseChimney, faSearch } from "@fortawesome/free-solid-svg-icons";
 
-import styles from "../styles components/NavBar.module.css";
+import styles from "../components styles/NavBar.module.css";
 
 export function NavBar() {
   return (

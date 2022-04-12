@@ -16,7 +16,7 @@ export default function MoviePop() {
           <Routes>
             <Route path="/" element={<Home/>}></Route>
             <Route path="/buscar" element={<Grid/>}>Ramon</Route>
-            <Route path="/detalle" element={<Detail/>}></Route>
+            <Route path="/pelicula/:peliculaId" element={<Detail/>}></Route>
           </Routes>
         </main>
       </div>
