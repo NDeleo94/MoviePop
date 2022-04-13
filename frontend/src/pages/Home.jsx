@@ -1,4 +1,4 @@
-import logo from "../img/cinema.png"
+import logo from "../img/cinema.png";
 
 export function Home() {
   return (

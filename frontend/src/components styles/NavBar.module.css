@@ -25,8 +25,8 @@
   padding: 5px;
 }
 .navButton:active {
-    color: #C48900;
-  }
+  color: #c48900;
+}
 
 .navButton:focus {
   outline: none;

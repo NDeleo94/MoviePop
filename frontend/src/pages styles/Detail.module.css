@@ -1,0 +1,33 @@
+.detailContainer {
+  display: block;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.col {
+  display: block;
+  max-width: 100%;
+  margin: 0;
+  height: 80%;
+}
+
+.movieDetails {
+  font-size: 1rem;
+}
+
+.movieImage {
+  display: block;
+  margin: 0 auto;
+}
+
+.objetfit {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  background-color: black;
+}
+
+.p {
+  margin: 20px;
+  text-align: left;
+}
