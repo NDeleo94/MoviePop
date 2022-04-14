@@ -1,29 +1,48 @@
 .nav {
-  height: 30px;
+  height: 50px;
   padding: 5px;
 }
 
 .navList {
-  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* height: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end; */
 }
 
 .navItem {
-  list-style: none;
+  float: right;
+  /* list-style: none;
   text-align: end;
   height: 100%;
-  border: none;
+  border: none; */
 }
 
 .navButton {
-  cursor: pointer;
-  height: 100%;
+  display: block;
+  text-align: center;
+  padding: 10px 16px;
   border: none;
   background: none;
+  /* color: aliceblue; */
+  cursor: pointer;
+  /* 
+  height: 100%;
+
   color: aliceblue;
-  padding: 5px;
+  padding: 5px; */
 }
+
+.colorA {
+  color: #c48900;
+}
+
+.colorB {
+  color: white;
+}
+
 .navButton:active {
   color: #c48900;
 }

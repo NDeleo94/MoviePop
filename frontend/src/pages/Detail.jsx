@@ -7,12 +7,30 @@ import { cleanTags } from "../utils/cleanTags";
 
 import { WaitImg } from "../components/WaitImg";
 import { getImage } from "../utils/getImage";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart as solid } from "@fortawesome/free-solid-svg-icons";
+import { faHeart as regular } from "@fortawesome/free-regular-svg-icons";
+import { Rating } from "../components/Rating";
+import { getRating } from "../utils/getRating";
 
 export function Detail() {
   const { peliculaId } = useParams();
   // console.log(peliculaId);
   const [movie, setMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  const [toggle, setToggle] = useState(false);
+  const [favorite, setFavorite] = useState(regular);
+
+  function favoriteToggle() {
+    if (!toggle) {
+      setFavorite(solid);
+    } else {
+      setFavorite(regular);
+    }
+    setToggle(!toggle);
+  }
+
   useEffect(() => {
     setIsLoading(true);
     getSingleMovie(peliculaId).then((data) => {
@@ -32,6 +50,12 @@ export function Detail() {
         src={getImage(movie.image)}
         alt={"poster " + movie.name}
       />
+      <div className={styles.favoriteSection}>
+        <button className={styles.favoriteButton} onClick={favoriteToggle}>
+          <FontAwesomeIcon icon={favorite} size="2x" />
+        </button>
+        <Rating stars={getRating(movie.rating)} />
+      </div>
       <div className={styles.col + " " + styles.movieDetails}>
         <h1>{movie.name}</h1>
         <p className={styles.p}>
