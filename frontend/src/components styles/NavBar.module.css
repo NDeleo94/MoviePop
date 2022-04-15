@@ -22,6 +22,20 @@ li {
   cursor: pointer;
 }
 
+.navButtonBack{
+  display: block;
+  text-align: center;
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: white;
+}
+
+.hiddenButton{
+  display: none;
+}
+
 .colorA {
   color: #c48900;
 }

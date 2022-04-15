@@ -12,6 +12,7 @@ import { faHeart as solid } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as regular } from "@fortawesome/free-regular-svg-icons";
 import { Rating } from "../components/Rating";
 import { getRating } from "../utils/getRating";
+import { NavBar } from "../components/NavBar";
 
 export function Detail() {
   const { peliculaId } = useParams();
@@ -44,34 +45,39 @@ export function Detail() {
   }
 
   return (
-    <div className={styles.detailContainer}>
-      <img
-        className={styles.col + " " + styles.movieImage + " " + styles.objetfit}
-        src={getImage(movie.image)}
-        alt={"poster " + movie.name}
-      />
-      <div className={styles.favoriteSection}>
-        <button className={styles.favoriteButton} onClick={favoriteToggle}>
-          <FontAwesomeIcon icon={favorite} size="2x" />
-        </button>
-        <Rating stars={getRating(movie.rating)} />
-      </div>
-      <div className={styles.col + " " + styles.movieDetails}>
-        <h1>{movie.name}</h1>
-        <p className={styles.p}>
-          <strong>Lenguaje: </strong>
-          {movie.language ? movie.language : "?"}
-        </p>
-        <p className={styles.p}>
-          <strong>Géneros: </strong>
-          {movie.genres.length ? movie.genres.join(", ") : "?"}
-        </p>
-        <p className={styles.p}>
-          <strong>Fecha de Estreno: </strong>
-          {movie.premiered}
-        </p>
-        <h1>Sinopsis </h1>
-        <p className={styles.p}>{cleanTags(movie.summary)}</p>
+    <div>
+      <NavBar page={"Detail"} />
+      <div className={styles.detailContainer}>
+        <img
+          className={
+            styles.col + " " + styles.movieImage + " " + styles.objetfit
+          }
+          src={getImage(movie.image)}
+          alt={"poster " + movie.name}
+        />
+        <div className={styles.favoriteSection}>
+          <button className={styles.favoriteButton} onClick={favoriteToggle}>
+            <FontAwesomeIcon icon={favorite} size="2x" />
+          </button>
+          <Rating stars={getRating(movie.rating)} />
+        </div>
+        <div className={styles.col + " " + styles.movieDetails}>
+          <h1>{movie.name}</h1>
+          <p className={styles.p}>
+            <strong>Lenguaje: </strong>
+            {movie.language ? movie.language : "?"}
+          </p>
+          <p className={styles.p}>
+            <strong>Géneros: </strong>
+            {movie.genres.length ? movie.genres.join(", ") : "?"}
+          </p>
+          <p className={styles.p}>
+            <strong>Fecha de Estreno: </strong>
+            {movie.premiered}
+          </p>
+          <h1>Sinopsis </h1>
+          <p className={styles.p}>{cleanTags(movie.summary)}</p>
+        </div>
       </div>
     </div>
   );

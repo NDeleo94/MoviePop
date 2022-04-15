@@ -11,8 +11,6 @@ export default function MoviePop() {
   return (
     <div className="App">
       <Router>
-      <div>
-        <NavBar/>
         <main>
           <Routes>
             <Route path="/" element={<Home/>}></Route>
@@ -21,7 +19,6 @@ export default function MoviePop() {
             <Route path="/login/" element={<Login/>}></Route>
           </Routes>
         </main>
-      </div>
     </Router>
     </div>
   );

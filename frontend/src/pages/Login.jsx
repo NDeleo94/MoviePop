@@ -1,6 +1,9 @@
+import { NavBar } from "../components/NavBar";
+
 export function Login() {
   return (
     <div>
+        <NavBar page={"Profile"}/>
         Login
       <form action="">
         
