@@ -23,7 +23,7 @@ export function Search() {
           value={search ?? ""}
           onChange={(e) => {
             const value = e.target.value;
-            history("/Buscar/?search=" + value);
+            history("/buscar/?search=" + value);
           }}
         />
       </div>

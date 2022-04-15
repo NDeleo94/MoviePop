@@ -5,14 +5,10 @@ import { MovieItem } from "./MovieItem";
 import styles from "../components styles/MoviesGrid.module.css";
 import { NoResults } from "./NoResults";
 import { WaitImg } from "./WaitImg";
-import { useQuery } from "../hooks/useQuery";
 
-export function MoviesGrid() {
+export function MoviesGrid({ search }) {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  const query = useQuery();
-  const search = query.get("search");
 
   useEffect(() => {
     setIsLoading(true);

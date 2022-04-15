@@ -7,17 +7,10 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  /* height: 100%;
-  display: flex;
-  justify-content: flex-end; */
 }
 
-.navItem {
+li {
   float: right;
-  /* list-style: none;
-  text-align: end;
-  height: 100%;
-  border: none; */
 }
 
 .navButton {
@@ -26,13 +19,7 @@
   padding: 10px 16px;
   border: none;
   background: none;
-  /* color: aliceblue; */
   cursor: pointer;
-  /* 
-  height: 100%;
-
-  color: aliceblue;
-  padding: 5px; */
 }
 
 .colorA {
