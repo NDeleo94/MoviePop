@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'backend',
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
 ]
 
@@ -104,6 +105,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = "backend.User"
+
+TOKEN_EXPIRED_AFTER_SECONDS = 60 * 30
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
