@@ -87,7 +87,7 @@ class Login(ObtainAuthToken):
 class Logout(APIView):
     def post(self, request, *args, **kwargs):
         try:
-            token = request.GET.get("token")
+            token = request.POST.get("token")
             token = Token.objects.filter(key=token).first()
 
             if token:
