@@ -6,7 +6,7 @@ import styles from "../components styles/MoviesGrid.module.css";
 import { NoResults } from "./NoResults";
 import { WaitImg } from "./WaitImg";
 
-export function MoviesGrid({ search }) {
+export function MoviesFav({ search }) {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -20,7 +20,7 @@ export function MoviesGrid({ search }) {
   }, [search]);
 
   if (!isLoading && movies.length === 0) {
-    return <NoResults text={"No se encontraron resultados"}/>;
+    return <NoResults text={"No se agregaron favoritos"}/>;
   }
 
   if (isLoading) {

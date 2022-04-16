@@ -1,5 +1,5 @@
 import styles from "../components styles/NoResults.module.css";
 
-export function NoResults() {
-  return <div className={styles.noResults}>No Results</div>;
+export function NoResults({text}) {
+  return <div className={styles.noResults}>{text}</div>;
 }

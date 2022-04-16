@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeft,
+  faHeart,
   faHouseChimney,
   faSearch,
   faUser,
@@ -11,7 +12,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export function NavBar({ page }) {
-  const [styleButton, setStyleButton] = useState([0, 1, 0]);
+  const [styleButton, setStyleButton] = useState([0, 0, 1, 0]);
   const [hidden, setHidden] = useState(true);
 
   const history = useNavigate();
@@ -28,14 +29,17 @@ export function NavBar({ page }) {
   }
 
   useEffect(() => {
-    if (page === "Home") {
-      setStyleButton([0, 1, 0]);
+    if (page === "Profile") {
+      setStyleButton([1, 0, 0, 0]);
+      setHidden(false);
+    } else if (page === "FavList") {
+      setStyleButton([0, 1, 0, 0]);
+      setHidden(false);
+    } else if (page === "Home") {
+      setStyleButton([0, 0, 1, 0]);
       setHidden(false);
     } else if (page === "Grid") {
-      setStyleButton([0, 0, 1]);
-      setHidden(false);
-    } else if (page === "Profile") {
-      setStyleButton([1, 0, 0]);
+      setStyleButton([0, 0, 0, 1]);
       setHidden(false);
     } else if (page === "Detail") {
       setHidden(true);
@@ -56,7 +60,7 @@ export function NavBar({ page }) {
         <li>
           <button
             className={`${styles.navButton} ${styleActive(
-              styleButton[2]
+              styleButton[3]
             )} ${is_hidden(hidden)}`}
             onClick={() => history("/buscar/")}
           >
@@ -66,11 +70,21 @@ export function NavBar({ page }) {
         <li>
           <button
             className={`${styles.navButton} ${styleActive(
-              styleButton[1]
+              styleButton[2]
             )} ${is_hidden(hidden)}`}
             onClick={() => history("/")}
           >
             <FontAwesomeIcon icon={faHouseChimney} size={"2x"} />
+          </button>
+        </li>
+        <li>
+          <button
+            className={`${styles.navButton} ${styleActive(
+              styleButton[1]
+            )} ${is_hidden(hidden)}`}
+            onClick={() => history("/favorites/")}
+          >
+            <FontAwesomeIcon icon={faHeart} size={"2x"} />
           </button>
         </li>
         <li>
