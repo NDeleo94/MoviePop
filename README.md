@@ -1,8 +1,14 @@
 # MoviePop
+
+Es un mini proyecto desarrollado con Django REST framework y ReactJS.
+
+El proyecto muestra información de peliculas y series emitidas en todo el mundo.
+
 ## Prerrequisitos
-El proyecto fue desarrollado con los siguientes lenguajes:
+El proyecto fue implementado con los siguientes lenguajes:
 
 Python 3.8.10
+
 Node v16.14.2
 
 Se recomienda usar estas versiones o superiores.
@@ -28,8 +34,23 @@ Luego clonar el repositorio, e instalar las dependencias:
 Nota: `(env)` Indica que la terminal esta trabajando en un entorno 
 virtual configurado por `virtualenvwrapper`.
 
-Una vez que `pip` haya descargado e instaladado las depencencias:
+## Funcionamiento
+### Backend
+
+Una vez que `pip` haya descargado e instaladado las depencencias, utilizamos el siguiente comando:
 ```sh
 (env)$ python manage.py runserver
 ```
 Y con esto tenemos el servidor backend funcionando.
+
+## Frontend
+
+Con la ayuda de una segunda terminal, nos ubicamos en el directorio del frontend del proyecto
+y utilizamos el comando `npm start`:
+
+```sh
+$ cd Moviepop/frontend
+$ cd npm start
+```
+
+Con esto tenemos el frontend funcionando.
