@@ -47,7 +47,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    """User model"""
+    """Modelo Usuario"""
 
     username = models.CharField(max_length=255, unique=True)
     email = models.EmailField("Email", max_length=255, unique=True)
@@ -75,11 +75,15 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 
 class Movie(models.Model):
-    """Pelicula model"""
+    """Modelo Pelicula"""
 
+    id = models.IntegerField(primary_key=True)
     movie = models.CharField(max_length=255)
+    is_active = models.BooleanField(default=True)
 
     class Meta:
+        verbose_name = "Pelicula"
+        verbose_name_plural = "Peliculas"
         ordering = ("movie",)
 
     def __str__(self):
@@ -88,24 +92,42 @@ class Movie(models.Model):
 
 
 class Comment(models.Model):
-    """Comment model."""
+    """Modelo Comentario"""
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name="users", on_delete=models.CASCADE)
+    movie = models.ForeignKey(Movie, related_name="comments", on_delete=models.CASCADE)
     comment = models.CharField(max_length=5000)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = "Comentario"
+        verbose_name_plural = "Comentarios"
+        ordering = (
+            "movie",
+            "user",
+        )
 
     def __str__(self):
         return self.comment
 
 
 class Favorites(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, blank=True, null=True)
+    """Modelo Favoritas"""
+
+    user = models.ForeignKey(
+        User, related_name="user", on_delete=models.CASCADE, blank=True, null=True
+    )
+    movie = models.ForeignKey(
+        Movie, related_name="movies", on_delete=models.CASCADE, blank=True, null=True
+    )
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         db_table = "backend_favorites"
         verbose_name = "Favorita"
         verbose_name_plural = "Favoritas"
+
+        ordering = ("user",)
 
     def __str__(self) -> str:
         return f"{self.user.__str__()} le gusta, {self.movie.__str__()}"

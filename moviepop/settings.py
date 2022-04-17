@@ -39,9 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'backend',
     'rest_framework',
+    'rest_framework.authtoken',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -102,6 +105,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = "backend.User"
+
+TOKEN_EXPIRED_AFTER_SECONDS = 60 * 30
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
