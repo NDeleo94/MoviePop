@@ -54,3 +54,5 @@ $ cd npm start
 ```
 
 Con esto tenemos el frontend funcionando.
+
+Listo! Ya podemos hacer uso de la aplicación.
