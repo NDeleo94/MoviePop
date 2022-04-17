@@ -1,0 +1,15 @@
+.img {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.waiting {
+  animation: loader 1s linear infinite;
+}
+
+@keyframes loader {
+  to {
+    transform: rotate(360deg);
+  }
+}

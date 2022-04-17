@@ -1,0 +1,53 @@
+.nav {
+  height: 50px;
+  padding: 5px;
+}
+
+.navList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  float: right;
+}
+
+.navButton {
+  display: block;
+  text-align: center;
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.navButtonBack{
+  display: block;
+  text-align: center;
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: white;
+}
+
+.hiddenButton{
+  display: none;
+}
+
+.colorA {
+  color: #c48900;
+}
+
+.colorB {
+  color: white;
+}
+
+.navButton:active {
+  color: #c48900;
+}
+
+.navButton:focus {
+  outline: none;
+}
